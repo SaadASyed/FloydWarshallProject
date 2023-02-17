@@ -28,7 +28,7 @@ def mainfloyd(matrix):
             # if start and end nodes are not same, we will call another function.
             else:
                 matrix[start][end] = floydrecursive(start, mid, end, matrix)
-    print(matrix)
+    answer(matrix)
     return matrix
 
 # This is the main recursive function which calls on itself
@@ -50,6 +50,22 @@ def floydrecursive(start, mid, end, matrix):
             return matrix[start][end]
         else:
             floydrecursive(start, mid, end, matrix)
+
+# creating a function to print final graph in a matrix format.
+
+
+def answer(matrix):
+    # I have used x and y as coordinates along the graph and
+    # anywhere where we have the no_path variable, I have included
+    # the first 5 numbers, otherwise kept the distance the same.
+    for x in range(vertices):
+        for y in range(vertices):
+            if matrix[x][y] == no_path:
+                matrix[x][y] = int(str(no_path)[0:5])
+            else:
+                matrix[x][y] = matrix[x][y]
+     # The array method from numpy library is used to print in matrix form.
+    print(mtr.array(matrix))
 
 
 mainfloyd(graph)
