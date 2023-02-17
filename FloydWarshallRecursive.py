@@ -14,8 +14,8 @@ graph = [[0, 7, no_path, 8],
 vertices = len(graph[0])
 mid = 0
 
-# This will be the main floyd function loops through the start and
-# end nodes.
+# This will be the main floyd function which loops through the
+# start and end nodes.
 
 
 def mainfloyd(matrix):
@@ -28,5 +28,28 @@ def mainfloyd(matrix):
             # if start and end nodes are not same, we will call another function.
             else:
                 matrix[start][end] = floydrecursive(start, mid, end, matrix)
-
+    print(matrix)
     return matrix
+
+# This is the main recursive function which calls on itself
+# in finding the shortest paths between the nodes.
+
+
+def floydrecursive(start, mid, end, matrix):
+    # given that the list count begins from 0, we run through the
+    # possible paths with the middle node starting from 0 up to 3.
+    while mid <= 3:
+        matrix[start][end] = min(
+            matrix[start][end], matrix[start][mid] + matrix[mid][end])
+        mid = mid + 1
+        # The following is a simple check to see if all middle nodes have
+        # been explored. If it has and 3 has been reached, we get the shortest
+        # path. Otherwise the function recursively calls itself to begin the
+        # next iteration.
+        if mid == 3:
+            return matrix[start][end]
+        else:
+            floydrecursive(start, mid, end, matrix)
+
+
+mainfloyd(graph)
