@@ -14,8 +14,9 @@ graph = [[0, 7, no_path, 8],
 vertices = len(graph[0])
 mid = 0
 
-# This will be the main floyd function which loops through the
-# start and end nodes.
+# This will be the main calling function which loops through the
+# start and end nodes. A separate function will be called to run
+# through various intermediary nodes.
 
 
 def mainfloyd(matrix):
@@ -56,7 +57,7 @@ def floydrecursive(start, mid, end, matrix):
 
 def answer(matrix):
     # I have used x and y as coordinates along the graph and
-    # anywhere where we have the no_path variable, I have included
+    # anywhere we have the no_path variable, I have included
     # the first 5 numbers, otherwise kept the distance the same.
     for x in range(vertices):
         for y in range(vertices):
