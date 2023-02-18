@@ -8,7 +8,7 @@ As a starting point, a graph outlining a 4x4 matrix was provided along with an i
 
 ## Repository index
 
-1. Iterative Version of the Algorithm - FloydAlgoIterative.py
-2. Recursive Version of the Algorithm - FloydAlgoRecursive.py
+1. Iterative Version of the Algorithm - FloydWarshallIterative.py
+2. Recursive Version of the Algorithm - FloydWarshallRecursive.py
 3. Unit Testing Recursive version - test_FloydAlgo.py
 4. Performance test for both versions - FloydWarshallTimeTest.py
