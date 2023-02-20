@@ -1,5 +1,4 @@
 import sys
-import itertools
 import numpy as mtr
 
 # Declaring initial variables. no_path is to signify no possible
