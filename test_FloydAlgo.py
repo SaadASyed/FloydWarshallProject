@@ -35,6 +35,47 @@ class TestFloydAlgo(unittest.TestCase):
         # returns/equals the CorrectMatrix variable defined earlier.
         self.assertEqual(answer1, CorrectMatrix)
 
+    def test_IncorrectAnswer(self):
+        # This is a test to see if the code works in case the wrong
+        # default answer is being checked against. The main block of
+        # the code is the same as the first test, only the CorrectMatrix
+        # variable is being updated.
+        matrix = [[0, 7, no_path, 8],
+                  [no_path, 0, 5, no_path],
+                  [no_path, no_path, 0, 2],
+                  [no_path, no_path, no_path, 0]]
+
+        short_np = int(str(no_path)[0:5])
+
+        CorrectMatrix = [[0, 7, 12, 8],
+                         [short_np, 0, 5, 2],
+                         [short_np, short_np, 0, 2],
+                         [short_np, short_np, short_np, 0]]
+
+        answer1 = FloydWarshallRecursive.mainfloyd(matrix)
+        self.assertEqual(answer1, CorrectMatrix)
+
+    def test_UpdatedMatrix(self):
+        # This is a test to see if the code works in case the wrong
+        # default answer is being checked against. The main block of
+        # the code is the same as the first test, only the Matrix
+        # being updated.
+        matrix = [[0, 9, no_path, 8],
+                  [no_path, 0, 5, no_path],
+                  [no_path, no_path, 0, 2],
+                  [no_path, no_path, no_path, 0]]
+
+        short_np = int(str(no_path)[0:5])
+
+        CorrectMatrix = [[0, 7, 12, 8],
+                         [short_np, 0, 5, 7],
+                         [short_np, short_np, 0, 2],
+                         [short_np, short_np, short_np, 0]]
+
+        answer1 = FloydWarshallRecursive.mainfloyd(matrix)
+
+        self.assertEqual(answer1, CorrectMatrix)
+
 
 if __name__ == '__main__':
     matrix = [[0, 7, no_path, 8],
