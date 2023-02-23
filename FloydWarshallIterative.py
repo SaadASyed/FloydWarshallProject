@@ -1,4 +1,4 @@
-# This is the iterative version of the Floyd Warshall Algorithm
+# This is the iterative version of the Floyd-Warshall Algorithm
 # provided as an example for this project. We will be performing
 # performance testing to see the time taken for execution.
 
