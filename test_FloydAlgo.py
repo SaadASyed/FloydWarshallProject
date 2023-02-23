@@ -59,7 +59,7 @@ class TestFloydAlgo(unittest.TestCase):
         # This is a test to see if the code works in case the wrong
         # default answer is being checked against. The main block of
         # the code is the same as the first test, only the Matrix
-        # being updated.
+        # variable is being updated.
         matrix = [[0, 9, no_path, 8],
                   [no_path, 0, 5, no_path],
                   [no_path, no_path, 0, 2],
