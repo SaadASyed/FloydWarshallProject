@@ -2,7 +2,7 @@ import sys
 import numpy as mtr
 
 # Declaring initial variables. no_path is to signify no possible
-# routes between respective nodes. Given that this is an equal sides
+# routes between respective nodes. Given that this is an equal sided
 # matrix, we use the vertices variable to decipher the number of
 # items in each list. Mid variable will be used in the recursive code.
 no_path = sys.maxsize
@@ -51,7 +51,7 @@ def floydrecursive(start, mid, end, matrix):
         else:
             floydrecursive(start, mid, end, matrix)
 
-# creating a function to print final graph in a matrix format.
+# The following function prints the final graph in a matrix format.
 
 
 def answer(matrix):
